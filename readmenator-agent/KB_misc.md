@@ -1,0 +1,82 @@
+# Subsystem: misc
+
+## fakesystemD/fakesystemd.py
+- Layer: utility
+- Doc: fakesystemd.py – Complete systemd emulator with full D-Bus properties and FD closure.
+- Language: py
+- Symbols:
+  - `UnitConfig` (class, line 42) `class UnitConfig`
+  - `JobConfig` (class, line 64) `class JobConfig`
+  - `Config` (class, line 71) `class Config`
+  - `Unit` (class, line 156) `class Unit(Object)`
+  - `Job` (class, line 255) `class Job(Object)`
+  - `Manager` (class, line 268) `class Manager(Object)`
+  - `NotifyListener` (class, line 546) `class NotifyListener`
+  - `log_journal` (method, line 634) `def log_journal(message, journal_path)`
+  - `FakeSystemd` (class, line 649) `class FakeSystemd`
+  - `run_tests` (method, line 698) `def run_tests()`
+  - `__init__` (method, line 72) `def __init__(self, config_path)`
+  - `load` (method, line 85) `def load(self)`
+  - `_create_default_config` (method, line 96) `def _create_default_config(self)`
+  - `_parse_config` (method, line 128) `def _parse_config(self, data)`
+  - `__init__` (method, line 158) `def __init__(self, bus, object_path, config, manager)`
+  - `Get` (method, line 166) `def Get(self, interface_name, property_name)`
+  - `Set` (method, line 196) `def Set(self, interface_name, property_name, value)`
+  - `GetAll` (method, line 202) `def GetAll(self, interface_name)`
+  - `GetUnitFileState` (method, line 223) `def GetUnitFileState(self)`
+  - `Describe` (method, line 228) `def Describe(self)`
+  - `UnitFileState` (method, line 233) `def UnitFileState(self)`
+  - `Reload` (method, line 238) `def Reload(self, mode)`
+  - `Freeze` (method, line 244) `def Freeze(self, mode)`
+  - `Thaw` (method, line 250) `def Thaw(self)`
+  - `__init__` (method, line 256) `def __init__(self, bus, object_path, job_config, manager)`
+  - `Get` (method, line 263) `def Get(self)`
+  - `__init__` (method, line 269) `def __init__(self, bus, object_path, config)`
+  - `_emit_unit_changed` (method, line 279) `def _emit_unit_changed(self, name)`
+  - `_create_units` (method, line 282) `def _create_units(self)`
+  - `_get_or_create_unit` (method, line 288) `def _get_or_create_unit(self, name)`
+  - `_get_unit_path` (method, line 306) `def _get_unit_path(self, name)`
+  - `_create_job` (method, line 309) `def _create_job(self, unit_name, job_type)`
+  - `Get` (method, line 321) `def Get(self, interface_name, property_name)`
+  - `Set` (method, line 341) `def Set(self, interface_name, property_name, value)`
+  - `GetAll` (method, line 346) `def GetAll(self, interface_name)`
+  - `GetVersion` (method, line 362) `def GetVersion(self)`
+  - `GetFeatures` (method, line 367) `def GetFeatures(self)`
+  - `GetVirtualization` (method, line 372) `def GetVirtualization(self)`
+  - `GetArchitecture` (method, line 377) `def GetArchitecture(self)`
+  - `GetEnvironment` (method, line 382) `def GetEnvironment(self)`
+  - `StartUnit` (method, line 387) `def StartUnit(self, name, mode)`
+  - `StopUnit` (method, line 396) `def StopUnit(self, name, mode)`
+  - `RestartUnit` (method, line 405) `def RestartUnit(self, name, mode)`
+  - `GetUnit` (method, line 414) `def GetUnit(self, name)`
+  - `GetUnitByPID` (method, line 420) `def GetUnitByPID(self, pid)`
+  - `ListUnits` (method, line 430) `def ListUnits(self)`
+  - `ListUnitsFiltered` (method, line 448) `def ListUnitsFiltered(self, states)`
+  - `GetUnitFileState` (method, line 453) `def GetUnitFileState(self, name)`
+  - `ListUnitFiles` (method, line 458) `def ListUnitFiles(self)`
+  - `EnableUnitFiles` (method, line 463) `def EnableUnitFiles(self, files, runtime, force)`
+  - `DisableUnitFiles` (method, line 471) `def DisableUnitFiles(self, files, runtime)`
+  - `Reload` (method, line 480) `def Reload(self, mode)`
+  - `Reexecute` (method, line 485) `def Reexecute(self)`
+  - `KillUnit` (method, line 490) `def KillUnit(self, name, signal)`
+  - `ResetFailedUnit` (method, line 496) `def ResetFailedUnit(self, name)`
+  - `ListJobs` (method, line 502) `def ListJobs(self)`
+  - `GetJob` (method, line 511) `def GetJob(self, job_id)`
+  - `GetUnitFileInfo` (method, line 518) `def GetUnitFileInfo(self)`
+  - `GetUnitFileInfoByName` (method, line 526) `def GetUnitFileInfoByName(self, name)`
+  - `SetUnitProperties` (method, line 533) `def SetUnitProperties(self, name, runtime, properties)`
+  - `GetUnitProcesses` (method, line 538) `def GetUnitProcesses(self, name)`
+  - `__init__` (method, line 547) `def __init__(self, config, callback)`
+  - `_find_usable_socket_path` (method, line 555) `def _find_usable_socket_path(self)`
+  - `start` (method, line 578) `def start(self)`
+  - `_run` (method, line 604) `def _run(self)`
+  - `stop` (method, line 625) `def stop(self)`
+  - `__init__` (method, line 650) `def __init__(self, config_path)`
+  - `_notify_callback` (method, line 658) `def _notify_callback(self, message)`
+  - `start` (method, line 662) `def start(self)`
+  - `_signal_handler` (method, line 684) `def _signal_handler(self, sig, frame)`
+  - `stop` (method, line 691) `def stop(self)`
+
+## install.sh
+- Layer: utility
+- Language: sh
