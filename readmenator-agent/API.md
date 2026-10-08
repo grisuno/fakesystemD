@@ -1,55 +1,192 @@
 # API
 
 ## fakesystemD/fakesystemd.py
-- `Config.__init__` (method) `fakesystemD/fakesystemd.py:72` `def __init__(self, config_path)`
-- `Config.load` (method) `fakesystemD/fakesystemd.py:85` `def load(self)`
-- `Unit.__init__` (method) `fakesystemD/fakesystemd.py:158` `def __init__(self, bus, object_path, config, manager)`
-- `Unit.Get` (method) `fakesystemD/fakesystemd.py:166` `def Get(self, interface_name, property_name)`
-- `Unit.Set` (method) `fakesystemD/fakesystemd.py:196` `def Set(self, interface_name, property_name, value)`
-- `Unit.GetAll` (method) `fakesystemD/fakesystemd.py:202` `def GetAll(self, interface_name)`
-- `Unit.GetUnitFileState` (method) `fakesystemD/fakesystemd.py:223` `def GetUnitFileState(self)`
-- `Unit.Describe` (method) `fakesystemD/fakesystemd.py:228` `def Describe(self)`
-- `Unit.UnitFileState` (method) `fakesystemD/fakesystemd.py:233` `def UnitFileState(self)`
-- `Unit.Reload` (method) `fakesystemD/fakesystemd.py:238` `def Reload(self, mode)`
-- `Unit.Freeze` (method) `fakesystemD/fakesystemd.py:244` `def Freeze(self, mode)`
-- `Unit.Thaw` (method) `fakesystemD/fakesystemd.py:250` `def Thaw(self)`
-- `Job.__init__` (method) `fakesystemD/fakesystemd.py:256` `def __init__(self, bus, object_path, job_config, manager)`
-- `Job.Get` (method) `fakesystemD/fakesystemd.py:263` `def Get(self)`
-- `Manager.__init__` (method) `fakesystemD/fakesystemd.py:269` `def __init__(self, bus, object_path, config)`
-- `Manager.Get` (method) `fakesystemD/fakesystemd.py:321` `def Get(self, interface_name, property_name)`
-- `Manager.Set` (method) `fakesystemD/fakesystemd.py:341` `def Set(self, interface_name, property_name, value)`
-- `Manager.GetAll` (method) `fakesystemD/fakesystemd.py:346` `def GetAll(self, interface_name)`
-- `Manager.GetVersion` (method) `fakesystemD/fakesystemd.py:362` `def GetVersion(self)`
-- `Manager.GetFeatures` (method) `fakesystemD/fakesystemd.py:367` `def GetFeatures(self)`
-- `Manager.GetVirtualization` (method) `fakesystemD/fakesystemd.py:372` `def GetVirtualization(self)`
-- `Manager.GetArchitecture` (method) `fakesystemD/fakesystemd.py:377` `def GetArchitecture(self)`
-- `Manager.GetEnvironment` (method) `fakesystemD/fakesystemd.py:382` `def GetEnvironment(self)`
-- `Manager.StartUnit` (method) `fakesystemD/fakesystemd.py:387` `def StartUnit(self, name, mode)`
-- `Manager.StopUnit` (method) `fakesystemD/fakesystemd.py:396` `def StopUnit(self, name, mode)`
-- `Manager.RestartUnit` (method) `fakesystemD/fakesystemd.py:405` `def RestartUnit(self, name, mode)`
-- `Manager.GetUnit` (method) `fakesystemD/fakesystemd.py:414` `def GetUnit(self, name)`
-- `Manager.GetUnitByPID` (method) `fakesystemD/fakesystemd.py:420` `def GetUnitByPID(self, pid)`
-- `Manager.ListUnits` (method) `fakesystemD/fakesystemd.py:430` `def ListUnits(self)`
-- `Manager.ListUnitsFiltered` (method) `fakesystemD/fakesystemd.py:448` `def ListUnitsFiltered(self, states)`
-- `Manager.GetUnitFileState` (method) `fakesystemD/fakesystemd.py:453` `def GetUnitFileState(self, name)`
-- `Manager.ListUnitFiles` (method) `fakesystemD/fakesystemd.py:458` `def ListUnitFiles(self)`
-- `Manager.EnableUnitFiles` (method) `fakesystemD/fakesystemd.py:463` `def EnableUnitFiles(self, files, runtime, force)`
-- `Manager.DisableUnitFiles` (method) `fakesystemD/fakesystemd.py:471` `def DisableUnitFiles(self, files, runtime)`
-- `Manager.Reload` (method) `fakesystemD/fakesystemd.py:480` `def Reload(self, mode)`
-- `Manager.Reexecute` (method) `fakesystemD/fakesystemd.py:485` `def Reexecute(self)`
-- `Manager.KillUnit` (method) `fakesystemD/fakesystemd.py:490` `def KillUnit(self, name, signal)`
-- `Manager.ResetFailedUnit` (method) `fakesystemD/fakesystemd.py:496` `def ResetFailedUnit(self, name)`
-- `Manager.ListJobs` (method) `fakesystemD/fakesystemd.py:502` `def ListJobs(self)`
-- `Manager.GetJob` (method) `fakesystemD/fakesystemd.py:511` `def GetJob(self, job_id)`
-- `Manager.GetUnitFileInfo` (method) `fakesystemD/fakesystemd.py:518` `def GetUnitFileInfo(self)`
-- `Manager.GetUnitFileInfoByName` (method) `fakesystemD/fakesystemd.py:526` `def GetUnitFileInfoByName(self, name)`
-- `Manager.SetUnitProperties` (method) `fakesystemD/fakesystemd.py:533` `def SetUnitProperties(self, name, runtime, properties)`
-- `Manager.GetUnitProcesses` (method) `fakesystemD/fakesystemd.py:538` `def GetUnitProcesses(self, name)`
-- `NotifyListener.__init__` (method) `fakesystemD/fakesystemd.py:547` `def __init__(self, config, callback)`
-- `NotifyListener.start` (method) `fakesystemD/fakesystemd.py:578` `def start(self)`
-- `NotifyListener.stop` (method) `fakesystemD/fakesystemd.py:625` `def stop(self)`
-- `NotifyListener.log_journal` (method) `fakesystemD/fakesystemd.py:634` `def log_journal(message, journal_path)`
-- `FakeSystemd.__init__` (method) `fakesystemD/fakesystemd.py:650` `def __init__(self, config_path)`
-- `FakeSystemd.start` (method) `fakesystemD/fakesystemd.py:662` `def start(self)`
-- `FakeSystemd.stop` (method) `fakesystemD/fakesystemd.py:691` `def stop(self)`
-- `FakeSystemd.run_tests` (method) `fakesystemD/fakesystemd.py:698` `def run_tests()`
+
+### log_journal (method) `def log_journal(message, journal_path)`
+- Defined: `fakesystemD/fakesystemd.py:634`
+
+### run_tests (method) `def run_tests()`
+- Defined: `fakesystemD/fakesystemd.py:698`
+
+### __init__ (method) `def __init__(self, config_path)`
+- Defined: `fakesystemD/fakesystemd.py:72`
+
+### load (method) `def load(self)`
+- Defined: `fakesystemD/fakesystemd.py:85`
+
+### _create_default_config (method) `def _create_default_config(self)`
+- Defined: `fakesystemD/fakesystemd.py:96`
+
+### _parse_config (method) `def _parse_config(self, data)`
+- Defined: `fakesystemD/fakesystemd.py:128`
+
+### __init__ (method) `def __init__(self, bus, object_path, config, manager)`
+- Defined: `fakesystemD/fakesystemd.py:158`
+
+### Get (method) `def Get(self, interface_name, property_name)`
+- Defined: `fakesystemD/fakesystemd.py:166`
+
+### Set (method) `def Set(self, interface_name, property_name, value)`
+- Defined: `fakesystemD/fakesystemd.py:196`
+
+### GetAll (method) `def GetAll(self, interface_name)`
+- Defined: `fakesystemD/fakesystemd.py:202`
+
+### GetUnitFileState (method) `def GetUnitFileState(self)`
+- Defined: `fakesystemD/fakesystemd.py:223`
+
+### Describe (method) `def Describe(self)`
+- Defined: `fakesystemD/fakesystemd.py:228`
+
+### UnitFileState (method) `def UnitFileState(self)`
+- Defined: `fakesystemD/fakesystemd.py:233`
+
+### Reload (method) `def Reload(self, mode)`
+- Defined: `fakesystemD/fakesystemd.py:238`
+
+### Freeze (method) `def Freeze(self, mode)`
+- Defined: `fakesystemD/fakesystemd.py:244`
+
+### Thaw (method) `def Thaw(self)`
+- Defined: `fakesystemD/fakesystemd.py:250`
+
+### __init__ (method) `def __init__(self, bus, object_path, job_config, manager)`
+- Defined: `fakesystemD/fakesystemd.py:256`
+
+### Get (method) `def Get(self)`
+- Defined: `fakesystemD/fakesystemd.py:263`
+
+### __init__ (method) `def __init__(self, bus, object_path, config)`
+- Defined: `fakesystemD/fakesystemd.py:269`
+
+### _emit_unit_changed (method) `def _emit_unit_changed(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:279`
+
+### _create_units (method) `def _create_units(self)`
+- Defined: `fakesystemD/fakesystemd.py:282`
+
+### _get_or_create_unit (method) `def _get_or_create_unit(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:288`
+
+### _get_unit_path (method) `def _get_unit_path(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:306`
+
+### _create_job (method) `def _create_job(self, unit_name, job_type)`
+- Defined: `fakesystemD/fakesystemd.py:309`
+
+### Get (method) `def Get(self, interface_name, property_name)`
+- Defined: `fakesystemD/fakesystemd.py:321`
+
+### Set (method) `def Set(self, interface_name, property_name, value)`
+- Defined: `fakesystemD/fakesystemd.py:341`
+
+### GetAll (method) `def GetAll(self, interface_name)`
+- Defined: `fakesystemD/fakesystemd.py:346`
+
+### GetVersion (method) `def GetVersion(self)`
+- Defined: `fakesystemD/fakesystemd.py:362`
+
+### GetFeatures (method) `def GetFeatures(self)`
+- Defined: `fakesystemD/fakesystemd.py:367`
+
+### GetVirtualization (method) `def GetVirtualization(self)`
+- Defined: `fakesystemD/fakesystemd.py:372`
+
+### GetArchitecture (method) `def GetArchitecture(self)`
+- Defined: `fakesystemD/fakesystemd.py:377`
+
+### GetEnvironment (method) `def GetEnvironment(self)`
+- Defined: `fakesystemD/fakesystemd.py:382`
+
+### StartUnit (method) `def StartUnit(self, name, mode)`
+- Defined: `fakesystemD/fakesystemd.py:387`
+
+### StopUnit (method) `def StopUnit(self, name, mode)`
+- Defined: `fakesystemD/fakesystemd.py:396`
+
+### RestartUnit (method) `def RestartUnit(self, name, mode)`
+- Defined: `fakesystemD/fakesystemd.py:405`
+
+### GetUnit (method) `def GetUnit(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:414`
+
+### GetUnitByPID (method) `def GetUnitByPID(self, pid)`
+- Defined: `fakesystemD/fakesystemd.py:420`
+
+### ListUnits (method) `def ListUnits(self)`
+- Defined: `fakesystemD/fakesystemd.py:430`
+
+### ListUnitsFiltered (method) `def ListUnitsFiltered(self, states)`
+- Defined: `fakesystemD/fakesystemd.py:448`
+
+### GetUnitFileState (method) `def GetUnitFileState(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:453`
+
+### ListUnitFiles (method) `def ListUnitFiles(self)`
+- Defined: `fakesystemD/fakesystemd.py:458`
+
+### EnableUnitFiles (method) `def EnableUnitFiles(self, files, runtime, force)`
+- Defined: `fakesystemD/fakesystemd.py:463`
+
+### DisableUnitFiles (method) `def DisableUnitFiles(self, files, runtime)`
+- Defined: `fakesystemD/fakesystemd.py:471`
+
+### Reload (method) `def Reload(self, mode)`
+- Defined: `fakesystemD/fakesystemd.py:480`
+
+### Reexecute (method) `def Reexecute(self)`
+- Defined: `fakesystemD/fakesystemd.py:485`
+
+### KillUnit (method) `def KillUnit(self, name, signal)`
+- Defined: `fakesystemD/fakesystemd.py:490`
+
+### ResetFailedUnit (method) `def ResetFailedUnit(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:496`
+
+### ListJobs (method) `def ListJobs(self)`
+- Defined: `fakesystemD/fakesystemd.py:502`
+
+### GetJob (method) `def GetJob(self, job_id)`
+- Defined: `fakesystemD/fakesystemd.py:511`
+
+### GetUnitFileInfo (method) `def GetUnitFileInfo(self)`
+- Defined: `fakesystemD/fakesystemd.py:518`
+
+### GetUnitFileInfoByName (method) `def GetUnitFileInfoByName(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:526`
+
+### SetUnitProperties (method) `def SetUnitProperties(self, name, runtime, properties)`
+- Defined: `fakesystemD/fakesystemd.py:533`
+
+### GetUnitProcesses (method) `def GetUnitProcesses(self, name)`
+- Defined: `fakesystemD/fakesystemd.py:538`
+
+### __init__ (method) `def __init__(self, config, callback)`
+- Defined: `fakesystemD/fakesystemd.py:547`
+
+### _find_usable_socket_path (method) `def _find_usable_socket_path(self)`
+- Defined: `fakesystemD/fakesystemd.py:555`
+
+### start (method) `def start(self)`
+- Defined: `fakesystemD/fakesystemd.py:578`
+
+### _run (method) `def _run(self)`
+- Defined: `fakesystemD/fakesystemd.py:604`
+
+### stop (method) `def stop(self)`
+- Defined: `fakesystemD/fakesystemd.py:625`
+
+### __init__ (method) `def __init__(self, config_path)`
+- Defined: `fakesystemD/fakesystemd.py:650`
+
+### _notify_callback (method) `def _notify_callback(self, message)`
+- Defined: `fakesystemD/fakesystemd.py:658`
+
+### start (method) `def start(self)`
+- Defined: `fakesystemD/fakesystemd.py:662`
+
+### _signal_handler (method) `def _signal_handler(self, sig, frame)`
+- Defined: `fakesystemD/fakesystemd.py:684`
+
+### stop (method) `def stop(self)`
+- Defined: `fakesystemD/fakesystemd.py:691`

@@ -1,8 +1,8 @@
 # Subsystem: misc
 
 ## fakesystemD/fakesystemd.py
-- Doc: – Complete systemd emulator with full D-Bus properties and FD closure.
 - Layer: utility
+- Doc: fakesystemd.py – Complete systemd emulator with full D-Bus properties and FD closure.
 - Language: py
 - Symbols:
   - `UnitConfig` (class, line 42) `class UnitConfig`

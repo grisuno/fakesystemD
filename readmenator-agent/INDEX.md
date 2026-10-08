@@ -1,6 +1,6 @@
 # Index
 
-| File | Purpose | Subsystem | Symbols | Used by |
-|------|---------|-----------|---------|---------|
-| `fakesystemD/fakesystemd.py` | – Complete systemd emulator with full D-Bus properties and FD closure. | misc | 71 | 0 |
-| `install.sh` | - | misc | 0 | 0 |
+| File | Purpose | Subsystem | Symbols |
+|------|---------|-----------|---------|
+| `fakesystemD/fakesystemd.py` | fakesystemd.py – Complete systemd emulator with full D-Bus properties and FD clo | misc | 71 |
+| `install.sh` | - | misc | 0 |
